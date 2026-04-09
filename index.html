@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Singapore to Stanford: A Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@400;500;600&display=swap');
+
+        :root {
+            --cardinal: #8C1515;
+            --cardinal-dark: #6B1010;
+            --sandstone: #D2C295;
+            --sandstone-light: #F4F0E5;
+            --palo-alto: #175E54;
+            --bay-blue: #0D6EAF;
+            --text-primary: #2E2D29;
+            --text-secondary: #585754;
+            --bg-white: #FAFAF7;
+            --border-light: #E3DFD3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Serif 4', Georgia, serif;
+            color: var(--text-primary);
+            background-color: var(--bg-white);
+            line-height: 1.75;
+            font-size: 17px;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--cardinal) 0%, var(--cardinal-dark) 100%);
+            color: white;
+            padding: 80px 40px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15em;
+            font-weight: 300;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        .hero .byline {
+            margin-top: 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8em;
+            font-weight: 400;
+            opacity: 0.7;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        .toc {
+            max-width: 780px;
+            margin: -30px auto 0;
+            padding: 30px 35px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 2;
+        }
+
+        .toc h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--cardinal);
+            margin-bottom: 14px;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 30px;
+        }
+
+        .toc a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 4px 0;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover {
+            color: var(--cardinal);
+        }
+
+        .toc a .num {
+            color: var(--cardinal);
+            font-weight: 600;
+            margin-right: 6px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 50px 30px 80px;
+        }
+
+        .section {
+            margin-bottom: 55px;
+        }
+
+        h2.section-title {
+            font-size: 1.7em;
+            color: var(--cardinal);
+            margin-bottom: 6px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--sandstone);
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05em;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 32px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        /* Callout boxes */
+        .tip-box {
+            background: var(--sandstone-light);
+            border-left: 4px solid var(--sandstone);
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95em;
+        }
+
+        .tip-box .tip-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--palo-alto);
+            margin-bottom: 6px;
+        }
+
+        .warning-box {
+            background: #FFF8F0;
+            border-left: 4px solid #E8950A;
+            padding: 18px 22px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95em;
+        }
+
+        .warning-box .tip-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.8em;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: #B87400;
+            margin-bottom: 6px;
+        }
+
+        /* Course table */
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.92em;
+        }
+
+        .course-table thead th {
+            font-family: 'Inter', sans-serif;
+            background: var(--cardinal);
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.85em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .course-table tbody td {
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-light);
+            vertical-align: top;
+        }
+
+        .course-table tbody tr:hover {
+            background: var(--sandstone-light);
+        }
+
+        .quarter-header {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.95em;
+            color: var(--cardinal);
+            padding: 16px 14px 8px;
+            border-bottom: 2px solid var(--sandstone);
+            background: transparent;
+        }
+
+        .course-remark {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .star {
+            color: var(--cardinal);
+        }
+
+        /* Steps */
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+            margin: 16px 0;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            padding: 8px 0 8px 42px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--cardinal);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Links */
+        a {
+            color: var(--bay-blue);
+            text-decoration: underline;
+            text-decoration-color: rgba(13, 110, 175, 0.3);
+            text-underline-offset: 2px;
+        }
+
+        a:hover {
+            text-decoration-color: var(--bay-blue);
+        }
+
+        /* Closing */
+        .closing {
+            background: linear-gradient(135deg, var(--sandstone-light) 0%, #FFF 100%);
+            border-radius: 10px;
+            padding: 40px 35px;
+            margin-top: 50px;
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        .closing h2 {
+            color: var(--cardinal);
+            margin-bottom: 16px;
+        }
+
+        .closing p {
+            max-width: 600px;
+            margin: 0 auto 14px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8em;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-light);
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero { padding: 50px 24px 40px; }
+            .hero h1 { font-size: 2em; }
+            .container { padding: 30px 20px 60px; }
+            .toc-grid { grid-template-columns: 1fr; }
+            .course-table { font-size: 0.82em; }
+            .course-table thead th, .course-table tbody td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>From Singapore to Stanford</h1>
+        <div class="subtitle">A Guide for Incoming MSx Singaporeans</div>
+        <div class="byline">Compiled by MSx '26 Singaporeans &bull; Stanford GSB</div>
+    </div>
+</div>
+
+<div class="toc">
+    <h2>What's Inside</h2>
+    <div class="toc-grid">
+        <a href="#before"><span class="num">1</span> Before You Leave Singapore</a>
+        <a href="#firstweek"><span class="num">2</span> Your First Week on Campus</a>
+        <a href="#getting-around"><span class="num">3</span> Getting Around</a>
+        <a href="#daily-life"><span class="num">4</span> Daily Life</a>
+        <a href="#health"><span class="num">5</span> Health and Insurance</a>
+        <a href="#academics"><span class="num">6</span> Academics: The MSx Curriculum</a>
+        <a href="#closing"><span class="num">7</span> A Final Note</a>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- SECTION 1 -->
+    <div class="section" id="before">
+        <h2 class="section-title">1. Before You Leave Singapore</h2>
+
+        <p>When I first landed at SFO with four oversized suitcases and a family in tow, I remember thinking: I have no idea how any of this works. The visa was sorted, the housing confirmed, but the sheer number of things I didn't know I didn't know was humbling. Where do I get a phone plan? Can I open a bank account without a Social Security Number? What's a Marguerite?</p>
+
+        <p>A year later, all of it feels second nature. And the one thing I wish I'd had on arrival was a single document from someone who'd been through it, written in plain language, with specific steps. So that's what this is. A few of us from the MSx '26 Singaporean cohort, together with seniors from '25, put this together for you. Here's what we wished someone had told us, in roughly the order you should tackle it.</p>
+
+        <h3>Visa Applications</h3>
+
+        <p>As an MSx student, you'll be on an F-1 visa. After you confirm your enrolment, Stanford will ask you to submit your I-20 request through Bechtel Connect. The deadline is typically 1 June, but don't wait: submit your documents as soon as possible after accepting your offer. Stanford issues the I-20 within 15 business days, provided your paperwork and financial documents are complete. Once you have your I-20, book your F-1 visa interview at the US Embassy in Singapore. The interview itself is brief, but appointment slots fill up fast during the summer rush.</p>
+
+        <p>If your spouse is joining you, they'll need an F-2 dependent visa. The process runs in parallel: your spouse's I-20 will be issued alongside yours. If you're bringing a parent or helper to assist in the initial settling-in period, you'll need to apply for a separate B1/B2 tourist visa for them. One of us did exactly this for a mother-in-law who stayed through the first few months, and it was approved without issues.</p>
+
+        <div class="tip-box">
+            <div class="tip-label">Good to know</div>
+            The MSx programme is STEM-designated. This means you're eligible for up to 36 months of post-graduation work authorisation in the US through OPT and STEM OPT, without needing employer-sponsored visa sponsorship. That's a meaningful advantage if you're considering staying on to work after graduation.
+        </div>
+
+        <h3>Setting Up a US Bank Account (Before You Arrive)</h3>
+
+        <p>This one made a real difference for us. You can open a Stanford Federal Credit Union (SFCU) account remotely, before you even set foot in the US. Having an account early means you can wire money over ahead of time, which is incredibly useful if you want to buy furniture or household items from departing MSx students.</p>
+
+        <p>Here's how to do it:</p>
+
+        <ol class="steps">
+            <li>Go to <a href="https://www.sfcu.org/students/">sfcu.org/students</a> and click "Open Account."</li>
+            <li>Use your Stanford email address and Stanford's physical address: 450 Jane Stanford Way, Stanford, CA 94305.</li>
+            <li>For the phone number field, enter 650-463-6422 temporarily to bypass the US number requirement.</li>
+            <li>Upload a copy of your passport for identification.</li>
+            <li>Select "Stanford student" for eligibility.</li>
+            <li>Complete the W-8 form (since you won't have an SSN yet).</li>
+            <li>After submitting, email <a href="mailto:StanfordFCUOnline@sfcu.org">StanfordFCUOnline@sfcu.org</a> with your name, Singapore address, phone number, and email so they can update your profile.</li>
+        </ol>
+
+        <p>Once on campus, you can also walk into any of SFCU's three Stanford branches to sort out anything in person. The process is fuss-free. Other options include Bank of America, Wells Fargo, and Chase on University Avenue in Palo Alto, though they tend to have stricter requirements for international students without an SSN.</p>
+
+        <h3>Getting a US Phone Number (While Still in Singapore)</h3>
+
+        <p>A US phone number is useful well before you arrive. You'll need one for two-factor authentication on various accounts, and it makes calling US numbers to sort out logistics much easier.</p>
+
+        <p>Several of us picked up eSIMs from carriers like Tello and Mint Mobile. Tello is worth highlighting: it offers free overseas calling via its app over Wi-Fi, which was tremendously helpful for making calls to the US while still in Singapore. The coverage runs on T-Mobile's network, which isn't as strong as AT&amp;T in some areas, but it's cheap and you can always switch carriers later. Mint Mobile is another solid budget option on the same T-Mobile network.</p>
+
+        <p>If you prefer to set things up in person after arrival, you can visit carrier stores on University Avenue in Palo Alto. As a new international student without US credit history, you'll likely start on a prepaid plan. That's completely normal. You can switch to postpaid once you have an SSN and some credit history.</p>
+
+        <h3>What to do with your Singapore Phone number</h3>
+
+        <p>The best way to keep your Singapore number without paying exorbitant fees is subscribe to SIMBA on their postpaid plan for $10 per month - it's called SuperRoam10. You'll need to port over from your existing telco (e.g. Singtel) to SIMBA to retain the number. You don't really need much minutes or data on this plan, as the main objective is to retain your number for the lowest possible cost. Most of us continue to link our WhatsApp to our SG numbers. Once you have a US phone plan, you can continue to use your SG number for WhatsApp while tapping on data from the US plan.</p>
+
+
+        <h3>Medical Prep You Can Do from Singapore</h3>
+
+        <p>Stanford's Vaden Health Center requires certain immunisations before you can register. Check their requirements early. One tip from our cohort: get your tuberculosis blood test done at a GP in Singapore before you leave. It's easier and faster to get it done here than to schedule it after arrival.</p>
+
+        <p>For adult immunisations, check if you're up to date on MMR (measles, mumps, rubella). If you're missing a dose, you have two options: get it done in Singapore, or do it after arrival at a Walgreens pharmacy in the US, where it's fully covered under Cardinal Care (Stanford's student health insurance). Just bring your proof of first dose and your Cardinal Care ID card.</p>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section" id="firstweek">
+        <h2 class="section-title">2. Your First Week on Campus</h2>
+
+        <h3>Getting from the Airport to Stanford</h3>
+
+        <p>Most of us flew into San Francisco International Airport (SFO). From the International Terminal, take the elevator or escalator up to Level 3 (Departures) and follow signs to the Uber/Lyft pickup zone. An Uber XXL comfortably fits four 28-inch suitcases and two carry-ons. The ride to campus takes about 30 to 40 minutes without heavy traffic, and costs roughly $100 for an XXL. Some of us also booked with a local taxi company for the transfer, which works just as well.</p>
+
+        <h3>Your Stanford ID and Courtesy Card</h3>
+
+        <p>Your Stanford ID is your key to everything on campus: buildings, the library, the gym, dining. Get it sorted as soon as you can. You should have received an email about submitting your photo online. After that, schedule a pickup appointment through the iQueue system and head to the ID Card Office on the second floor of Tresidder Memorial Union, 459 Lagunita Drive. Take the spiral staircase opposite Starbucks and turn left.</p>
+
+        <p>If your spouse or partner is with you, apply for a Courtesy Card at the same time. Submit a help ticket through Stanford's ServiceNow portal with your documentation and your spouse's passport photo. You can schedule the courtesy card pickup alongside your own ID pickup: very convenient. The card costs $25 and gives your spouse access to campus facilities like libraries and gyms.</p>
+
+        <h3>Housing</h3>
+
+        <p>For families, Escondido Village (EV) is the clear recommendation. It's about a 10-minute walk to the GSB, and it's where most of your classmates with families will be. The courtyards have playgrounds, and you're close to amenities like tennis courts, computer rooms, and music studios in the EVGR complex. For families with one child, a two-bedroom is the sweet spot: we applied for one and really liked the space. Families with two kids get priority for three-bedroom units.</p>
+
+        <p>Escondido South is a smaller housing cluster, further from the GSB at about 15 minutes' walk. It's also near Rains, which has historically been popular with younger students. Oak Creek sits at the western edge of campus and is the furthest option, though it's still cheaper than renting privately in Palo Alto.</p>
+
+        <div class="tip-box">
+            <div class="tip-label">The carpet hack</div>
+            If you'd rather not deal with carpeted floors (they're a nightmare to clean, especially with young children), apply for a medical accommodation. If your kids have childhood asthma or sinus issues, this qualifies. You'll be assigned a unit with plain wooden laminate flooring instead.
+        </div>
+
+        <p>One important note: if you apply for summer quarter housing, you'll keep the same unit for the full academic year. So there's no need to worry about moving partway through. Stanford does not provide housing for extended family members, including parents, siblings, or live-in childcare help.</p>
+
+        <div class="warning-box">
+            <div class="tip-label">Heads up</div>
+            Some EV low-rise buildings are currently under renovation. Check Stanford R&amp;DE's website for the latest information on which buildings may require mid-year relocations.
+        </div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section" id="getting-around">
+        <h2 class="section-title">3. Getting Around</h2>
+
+        <h3>The Marguerite Shuttle</h3>
+
+        <p>Stanford runs a free bus system called the Marguerite. It covers the entire campus and connects to key spots in Palo Alto, including the Caltrain station and shopping centres. Download the ETA SPOT app on your phone for live maps and real-time arrival estimates. It's a must-have, especially if you don't have a car.</p>
+
+        <h3>Bikes and Scooters</h3>
+
+        <p>The campus is large. Bikes and scooters are the most popular way to get around. For used bikes, check <a href="https://supost.com">supost.com</a> (Stanford's student marketplace) or ask departing MSx '26 students: move-out sales are a great time to pick one up cheap. The Campus Bike Shop also sells new and refurbished bikes and handles repairs. California law requires a front white light and a rear red reflector when riding at night. Helmets aren't legally required for adults, but use common sense.</p>
+
+        <h3>Car Rental</h3>
+
+        <p>ZipCar has vehicles on campus, but be aware that many international driving licences are not accepted, including China's. Hertz is more flexible: the Stanford Oak branch offers a student discount, and they accept translated international licences. Check the Hertz Stanford page for rates.</p>
+
+        <h3>Parking Permit</h3>
+
+        <p>If you bring or buy a car, residential parking permits are available through Stanford Transportation. As of mid-2025, the rate is $47 per month. Purchase online to get your permit.</p>
+
+        <h3>California Driver's Licence</h3>
+
+        <p>You'll need a California driver's licence eventually if you plan to drive regularly. Here's the process for F-1 students:</p>
+
+        <ol class="steps">
+            <li>Wait at least 10 days after entering the US for your SEVIS record to become active in the DMV system.</li>
+            <li>Gather your documents: passport, F-1 visa, I-94 printout, signed and active I-20, SSN card or rejection letter, two California residency proofs (housing contract and a bank statement work well), and the completed DL/ID application form.</li>
+            <li>Book your written and vision tests online through the California DMV. Appointments are usually available within a week. Passing gives you a Learner's Permit.</li>
+            <li>Book your behind-the-wheel road test online. Walk-ins aren't accepted, and wait times range from several weeks to a month, so book early.</li>
+            <li>For the road test, bring a licensed California driver to accompany you. The test takes about 15 to 20 minutes.</li>
+            <li>Once you pass, you'll receive a temporary paper licence valid for 60 days. The official plastic card arrives by mail within 3 to 4 weeks.</li>
+        </ol>
+
+        <p>Convenient DMV offices include Redwood City and Santa Clara. You'll need proof of residence first, so this is a task for after you've settled in.</p>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section" id="daily-life">
+        <h2 class="section-title">4. Daily Life</h2>
+
+        <h3>Groceries and Dining</h3>
+
+        <p>On campus, the Arbuckle Dining Pavilion at the GSB is your go-to for coffee, snacks, and lunch. Check Stanford R&amp;DE's dining website for up-to-date hours, especially during summer quarter when many dining halls are closed.</p>
+
+        <p>For groceries, the main nearby options are Whole Foods, Trader Joe's, and Safeway. They're all a bit too far to walk with heavy bags, so plan on driving or taking a ride. The main off-campus dining hubs are the Stanford Shopping Center, University Avenue, and California Avenue, where there's no shortage of good restaurants across every cuisine.</p>
+
+        <h3>Shopping</h3>
+
+        <p>The Stanford Bookstore is the place for all your Cardinal merch: hoodies, shirts, gifts for family back home. The Stanford Shopping Center is an upscale outdoor mall with Macy's, Bloomingdale's, and plenty of brand stores. For those coming from Singapore, think of it as our version of an open-air ION Orchard, but with better parking.</p>
+
+        <h3>Palo Alto Library Card</h3>
+
+        <p>Apply for a Palo Alto library card on your first visit. It's a walk-in process and takes just a few minutes. The libraries have a great collection, and the kids' sections are excellent if you have young children.</p>
+
+        <h3>National Parks Annual Pass</h3>
+
+        <p>California and the American West have some of the most stunning national parks in the world: Yosemite, Sequoia, Big Sur, and many more. An annual pass now cost $250 (used to cost $80 in 2025) and covers entrance fees for the passholder and all passengers in a single vehicle. Time your purchase carefully: if you buy it early in your programme, you can stretch it all the way through your post-graduation trips before heading home. A single-entry National Park pass is $100, so the $250 may still be worth it if you plan to visit more than 2 parks.</p>
+    </div>
+
+    <!-- SECTION 5 -->
+    <div class="section" id="health">
+        <h2 class="section-title">5. Health and Insurance</h2>
+
+        <h3>Cardinal Care (Student Insurance)</h3>
+
+        <p>Most of us went with Cardinal Care for simplicity. It's Stanford's default student health insurance plan and covers a wide range of medical needs, including immunisations at pharmacies like Walgreens and CVS. The sign-up process is straightforward and happens during orientation.</p>
+
+        <h3>Child Medical Insurance</h3>
+
+        <p>For those with children, we used Patriot for our kids' insurance. It's decent and affordable, but there's an important gap: it does not cover immunisations or routine health check-ups. Those check-ups are required for enrolling your child in childcare or preschool in California, so budget for paying out-of-pocket for paediatric visits and vaccinations.</p>
+
+        <h3>Immunisation Requirements</h3>
+
+        <p>Vaden Health Center requires proof of certain immunisations. Check their portal early for the full list. As mentioned, the TB blood test is easiest to complete at a GP in Singapore. For MMR, if you're missing a dose, you can get it at a Walgreens: no appointment needed, fully covered by Cardinal Care. Just bring proof of your first dose and your insurance card, and upload the new documentation to the Vaden portal afterward.</p>
+    </div>
+
+    <!-- SECTION 6 -->
+    <div class="section" id="academics">
+        <h2 class="section-title">6. Academics: The MSx Curriculum</h2>
+
+        <p>The MSx programme runs across four quarters: summer, autumn, winter, and spring. Summer and early autumn are dominated by core courses taken within your MSx cohort. By late autumn and into winter and spring, you'll have increasing room for electives, which you can pick from across the GSB catalogue and the broader Stanford course listings. You can also cross-register in courses from Stanford's other schools: engineering, education, law, public policy.</p>
+
+        <p>A detailed course guide with reviews and recommendations is coming soon. Watch this space.</p>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing" id="closing">
+        <h2>Making the Most of Your Year</h2>
+
+        <p>The MSx year goes by faster than you think. One moment you're fumbling with your SFCU login and wondering what a Marguerite is. The next you're picking a cap and gown for graduation.</p>
+
+        <p>Here's what we'd tell ourselves if we could go back to the beginning: say yes to things that feel unfamiliar. Take that class outside the GSB. Go to that talk by someone whose field you know nothing about. Accept that dinner invitation from a classmate whose background is completely different from yours. The academic content is excellent, but the people you meet and the perspectives you absorb are what will stay with you long after you've forgotten the formulas.</p>
+
+        <p>You're leaving Singapore with a career's worth of experience. You're arriving at Stanford with the chance to question, stretch, and rebuild your assumptions about what comes next. That's a rare gift. We arrived with the same four oversized suitcases and the same list of questions you have now. It all worked out.</p>
+
+        <p>We're glad you're joining. Welcome to the Farm.</p>
+    </div>
+
+    <div class="footer">
+        <p>Compiled by the MSx '26 Singaporean cohort at Stanford GSB.</p>
+        <p>Last updated: April 2026</p>
+    </div>
+
+</div>
+
+</body>
+</html>
